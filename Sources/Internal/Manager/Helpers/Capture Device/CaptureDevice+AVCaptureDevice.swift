@@ -41,7 +41,7 @@ extension AVCaptureDevice {
     func setExposureModeCustom(duration: CMTime, iso: Float) {
         setExposureModeCustom(duration: duration, iso: iso, completionHandler: nil)
     }
-    func setExposureTargetBias(_ bias: Float) {
+    func setExposureTargetBiasCustom(_ bias: Float) {
         setExposureTargetBias(bias, completionHandler: nil)
     }
 }
