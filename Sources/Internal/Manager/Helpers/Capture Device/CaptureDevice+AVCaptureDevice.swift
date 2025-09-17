@@ -38,4 +38,10 @@ extension AVCaptureDevice {
             if newValue != .auto { isVideoHDREnabled = newValue == .on }
         }
     }
+    func setExposureModeCustom(duration: CMTime, iso: Float) {
+        setExposureModeCustom(duration: duration, iso: iso, completionHandler: nil)
+    }
+    func setExposureTargetBias(_ bias: Float) {
+        setExposureTargetBias(bias, completionHandler: nil)
+    }
 }
