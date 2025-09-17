@@ -47,8 +47,8 @@ protocol CaptureDevice: NSObject {
     func lockForConfiguration() throws
     func unlockForConfiguration()
     func isExposureModeSupported(_ exposureMode: AVCaptureDevice.ExposureMode) -> Bool
-    func setExposureModeCustom(duration: CMTime, iso: Float, completionHandler: ((CMTime) -> Void)?)
-    func setExposureTargetBias(_ bias: Float, completionHandler handler: ((CMTime) -> ())?)
+    func setExposureModeCustom(duration: CMTime, iso: Float)
+    func setExposureTargetBias(_ bias: Float)
 }
 
 
@@ -116,7 +116,7 @@ extension CaptureDevice {
         let duration = max(min(duration, maxExposureDuration), minExposureDuration)
         let iso = max(min(iso, maxISO), minISO)
 
-        setExposureModeCustom(duration: duration, iso: iso, completionHandler: nil)
+        setExposureModeCustom(duration: duration, iso: iso)
     }
 }
 
@@ -126,6 +126,6 @@ extension CaptureDevice {
         guard isExposureModeSupported(.custom) else { return }
 
         let bias = max(min(bias, maxExposureTargetBias), minExposureTargetBias)
-        setExposureTargetBias(bias, completionHandler: nil)
+        setExposureTargetBias(bias)
     }
 }
