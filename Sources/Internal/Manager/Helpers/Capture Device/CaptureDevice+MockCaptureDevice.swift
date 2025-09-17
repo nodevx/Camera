@@ -51,7 +51,7 @@ class MockCaptureDevice: NSObject, CaptureDevice {
         _exposureDuration = duration
         _iso = iso
     }
-    func setExposureTargetBias(_ bias: Float) {
+    func setExposureTargetBiasCustom(_ bias: Float) {
         _exposureTargetBias = bias
     }
 
